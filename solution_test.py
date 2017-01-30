@@ -67,6 +67,32 @@ class TestNakedTwins(unittest.TestCase):
          'I3': '5', 'I4': '7', 'I5': '2', 'I6': '6', 'I7': '1', 'I8': '4', 'I9': '8'}
     ]
 
+    before_hidden_twins_1 = {'G7': '4', 'G6': '57', 'G5': '8', 'G4': '6', 'G3': '9', 'G2': '57', 'G1': '2', 'G9': '3',
+                             'G8': '1', 'C9': '2', 'C8': '59', 'C3': '1', 'C2': '359', 'C1': '4', 'C7': '8', 'C6': '6',
+                             'C5': '7', 'A4': '4', 'A9': '169', 'A8': '3', 'F1': '59', 'F2': '3579', 'F3': '357',
+                             'F4': '2', 'F5': '6', 'F6': '4', 'F7': '13579', 'F8': '8','F9': '9', 'B4': '135',
+                             'B5': '129', 'B6': '25', 'B7': '1569', 'E9': '469', 'B1': '569', 'B2': '8', 'B3': '356',
+                             'C4': '35', 'B8': '4', 'B9': '7', 'I9': '5', 'I8': '7', 'I1': '1', 'I3': '8', 'I2': '6',
+                             'I5': '4', 'I4': '9', 'I7': '2', 'I6': '3', 'A1': '7', 'A3': '56', 'A2': '2', 'A5': '19',
+                             'E8': '269', 'A7': '1569', 'A6': '8', 'E5': '5','E4': '8', 'E7': '3679', 'E6': '1',
+                             'E1': '69', 'E3': '23467', 'E2': '379', 'H8': '69', 'H9': '8', 'H2': '4', 'H3': '57',
+                             'H1': '3', 'H6': '257', 'H7': '69', 'H4': '15', 'H5': '12', 'D8': '256', 'D9': '46',
+                             'D6': '9','D7': '56', 'D4': '7', 'D5': '3', 'D2': '1', 'D3': '2456', 'D1': '8'}
+
+    possible_hidden_solutions_1 = [{'G7': '4', 'G6': '57', 'G5': '8', 'G4': '6', 'G3': '9', 'G2': '57', 'G1': '2',
+                                   'G9': '3','G8': '1', 'C9': '2', 'C8': '59', 'C3': '1', 'C2': '359', 'C1': '4',
+                                   'C7': '8', 'C6': '6','C5': '7', 'A4': '4', 'A9': '169', 'A8': '3', 'F1': '59',
+                                   'F2': '3579', 'F3': '357','F4': '2', 'F5': '6', 'F6': '4', 'F7': '37', 'F8': '8',
+                                   'F9': '9', 'B4': '135','B5': '129', 'B6': '25', 'B7': '1569', 'E9': '469',
+                                   'B1': '569', 'B2': '8', 'B3': '356','C4': '35', 'B8': '4', 'B9': '7', 'I9': '5',
+                                   'I8': '7', 'I1': '1', 'I3': '8', 'I2': '6', 'I5': '4', 'I4': '9', 'I7': '2',
+                                   'I6': '3', 'A1': '7', 'A3': '56', 'A2': '2', 'A5': '19','E8': '269',
+                                   'A7': '1569', 'A6': '8', 'E5': '5', 'E4': '8', 'E7': '37', 'E6': '1','E1': '69',
+                                   'E3': '24', 'E2': '37', 'H8': '69', 'H9': '8', 'H2': '4', 'H3': '57','H1': '3',
+                                   'H6': '257', 'H7': '69', 'H4': '15', 'H5': '12', 'D8': '256', 'D9': '46',
+                                   'D6': '9', 'D7': '56', 'D4': '7', 'D5': '3', 'D2': '1', 'D3': '24', 'D1': '8' }]
+
+
     def test_naked_twins(self):
         self.assertTrue(solution.naked_twins(self.before_naked_twins_1) in self.possible_solutions_1,
                         "Your naked_twins function produced an unexpected board.")
@@ -75,7 +101,9 @@ class TestNakedTwins(unittest.TestCase):
         self.assertTrue(solution.naked_twins(self.before_naked_twins_2) in self.possible_solutions_2,
                         "Your naked_twins function produced an unexpected board.")
 
-
+    def test_hidden_twins(self):
+        self.assertTrue(solution.hidden_twins(self.before_hidden_twins_1) in self.possible_hidden_solutions_1,
+                        "Your hidden_twins function produced an unexpected board.")
 
 class TestDiagonalSudoku(unittest.TestCase):
     diagonal_grid = '2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3'
