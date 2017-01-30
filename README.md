@@ -3,11 +3,16 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: The naked twins are identified by unit and if present, the other boxes in the units are updated to remove the values
+of the naked twins from these boxes as only two boxes are constrained to have the naked twin's values in that unit
+The naked twins function I wrote is self-contained and does not have to be called from any other functions
+I have also added a self contained function to solve the "Hidden Twins Exclusion" problem as an extension strategy for Sudoku
+This is a separate strategy from "Naked Twins". Both are sef-contained functions.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: The easiest way is to simply add the left and right diagional to the unitlist causing an additional 4th constraint on
+the boxes in the Sudoku puzzle, that is, diagonal in addition to row, column and 3x3 unit
 
 ### Install
 
